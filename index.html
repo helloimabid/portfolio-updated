@@ -9,75 +9,99 @@
     <link rel="shortcut icon" href="a.png" type="image/x-icon">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="Screenshot 2024-12-16 215108.png" type="image/x-icon">
+
+
 </head>
 
 <body>
-    <header>
-        <a href="#" class="logo"> <img src="a2.png" alt=""></a>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#HOME">HOME</a></li>
-                <li><a href="#PROJECTS">PROJECTS</a></li>
-                <li><a href="#ABOUT">ABOUT ME</a></li>
-                <li><a href="Contact.html">CONTACT</a></li>
-            </ul>
-        </nav>
-        <div class="menu-icon" id="menu-icon">
-            <i class='bx bx-menu'></i>
-        </div>
-    </header>
 
-    <section class="home">
-        <div class="home-content">
-            <img class="pictureofmine" width="50%" src= "picture.jpg" alt="picture">
-            <h1>Hi, I'm Sadman Abid</h1>
-            <h3>Web Developer</h3>
-            <p>Hey there I'm Abid from Bangladesh. I'm a passionate Web Developer, building user-friendly scalable
-                websites for the best user experience.</p>
-            <div class="home-button">
+    <div id="loader">
+        <div class="crystal"></div>
+        <div class="crystal"></div>
+        <div class="crystal"></div>
+        <div class="crystal"></div>
+        <div class="crystal"></div>
+        <div class="crystal"></div>
+    </div>
+    <div id="container">
 
-                <a href="mailto:helloimabid@gmail.com?subject=Let's Talk&body=Hi there! I'd like to connect with you">Let's
-                    Talk</a>
-                <a href="Contact.html" target="_blank" rel="noopener noreferrer">Send Message</a>
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img src="a2.png" alt="LOGO" width="200px" height="50px"></a>
+                </div>
+                    <ul class="nav-list" id="nav-list">
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="#">ABOUT ME</a></li>
+                        <li><a href="#">PROJECTS</a></li>
+                        <li><a href="Contact.html">CONTACT ME</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <input id="checkbox" type="checkbox">
+                        <label class="toggle" for="checkbox" onclick="toggleMenu()">
+                            <div id="bar1" class="bars"></div>
+                            <div id="bar2" class="bars"></div>
+                            <div id="bar3" class="bars"></div>
+                        </label>
+                    </div>
+            </nav>
+        </header>
+        <div id="fade">
+        <section class="home">
+            <div class="home-content">
+                <img class="pictureofmine" width="50%" src="picture.jpg" alt="picture">
+                <h1>Hi, I'm Sadman Abid</h1>
+                <h3>Web Developer</h3>
+                <p>Hey there I'm Abid from Bangladesh. I'm a passionate Web Developer, building user-friendly scalable
+                    websites for the best user experience.</p>
+                <div class="home-button">
+
+                    <a
+                        href="mailto:helloimabid@gmail.com?subject=Let's Talk&body=Hi there! I'd like to connect with you">Let's
+                        Talk</a>
+                    <a href="Contact.html" target="_blank" rel="noopener noreferrer">Send Message</a>
+                </div>
             </div>
-        </div>
-       
-    </section>
 
-    <footer>
-        <div class="footer-container">
+        </section>
 
-            <h4>GET IN TOUCH</h4>
-            <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3" class="map">
-                <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
-                <script>(function () {
-                        var setting = { "query": "Mirpur-10, Dhaka, Bangladesh", "width": 300, "height": 200, "satellite": false, "zoom": 15, "placeId": "ChIJ-7MyNdPAVTcRDbyyHMCwJys", "cid": "0x2b27b0c01cb2bc0d", "coords": [23.8028556, 90.3748344], "cityUrl": "/bangladesh/dhaka-2125", "cityAnchorText": "Map of Dhaka, Bangladesh", "lang": "us", "queryString": "Mirpur-10, Dhaka, Bangladesh", "centerCoord": [23.8028556, 90.3748344], "id": "map-9cd199b9cc5410cd3b1ad21cab2e54d3", "embed_id": "1178661" };
-                        var d = document;
-                        var s = d.createElement('script');
-                        s.src = 'https://1map.com/js/script-for-user.js?embed_id=1178661';
-                        s.async = true;
-                        s.onload = function (e) {
-                            window.OneMap.initMap(setting)
-                        };
-                        var to = d.getElementsByTagName('script')[0];
-                        to.parentNode.insertBefore(s, to);
-                    })();</script><a href="https://1map.com/map-embed">1 Map</a>
+        <footer>
+            <div class="footer-container">
+
+                <h4>GET IN TOUCH</h4>
+                <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3" class="map">
+                    <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
+                    <script>(function () {
+                            var setting = { "query": "Mirpur-10, Dhaka, Bangladesh", "width": 300, "height": 200, "satellite": false, "zoom": 15, "placeId": "ChIJ-7MyNdPAVTcRDbyyHMCwJys", "cid": "0x2b27b0c01cb2bc0d", "coords": [23.8028556, 90.3748344], "cityUrl": "/bangladesh/dhaka-2125", "cityAnchorText": "Map of Dhaka, Bangladesh", "lang": "us", "queryString": "Mirpur-10, Dhaka, Bangladesh", "centerCoord": [23.8028556, 90.3748344], "id": "map-9cd199b9cc5410cd3b1ad21cab2e54d3", "embed_id": "1178661" };
+                            var d = document;
+                            var s = d.createElement('script');
+                            s.src = 'https://1map.com/js/script-for-user.js?embed_id=1178661';
+                            s.async = true;
+                            s.onload = function (e) {
+                                window.OneMap.initMap(setting)
+                            };
+                            var to = d.getElementsByTagName('script')[0];
+                            to.parentNode.insertBefore(s, to);
+                        })();</script><a href="https://1map.com/map-embed">1 Map</a>
+                </div>
             </div>
-        </div>
-        
+
             <div class="home-sci">
                 <a href="https://www.facebook.com/helloimabid" target="_blank"><i class='bx bxl-facebook'></i></a>
-                <a href="https://www.linkedin.com/in/sadman-abid-b0a473302/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://www.linkedin.com/in/sadman-abid-b0a473302/" target="_blank"><i
+                        class='bx bxl-linkedin'></i></a>
                 <a href="https://github.com/helloimabid" target="_blank"><i class='bx bxl-github'></i></a>
                 <a href="https://www.instagram.com/hello_im_abid/" target="_blank"><i class='bx bxl-instagram'></i></a>
                 <a href="https://x.com/helloimabid" target="_blank"><i class='bx bxl-twitter'></i></a>
             </div>
-                <div class="footercontainer2">
-                    <p class="footerparagraph">&copy; <span id="current-year"></span> SADMAN ABID. All Rights Reserved.</p>
-                </div>
-            
+            <div class="footercontainer2">
+                <p class="footerparagraph">&copy; <span id="current-year"></span> SADMAN ABID. All Rights Reserved.</p>
+            </div>
 
-    </footer>
+
+        </footer>
+    </div>
+    </div>
 
     <script src="main.js"></script>
 </body>

@@ -22,48 +22,90 @@ body {
     line-height: 1.6;
 }
 
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 10%;
-    background-color: var(--bg-color);
+/* header */
+.logo{
+    margin: 10px;
 }
-
-.logo img {
-    width: 9rem;
-}
-
-.navbar ul {
-    list-style: none;
-    display: flex;
-}
-
-.navbar li {
-    margin-left: 20px;
-}
-
-.navbar a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.navbar a:hover {
-    color: var(--main-color);
-}
-
-/* Responsive Menu Icon */
-.menu-icon {
+.hamburger{
     display: none;
-    cursor: pointer;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-list{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0px;
+    transform: translateX(0%);;
+    
+}
+.nav-list li a{
+    text-decoration: none;
+    color: var(--sub-text-color);
+    margin-right: 5px;
+}
+.nav-list li a:hover{
+    color: var(--main-color);
+    transition: 0.3s;
 }
 
-.menu-icon i {
-    font-size: 2rem;
-    color: var(--main-color);
+
+
+#checkbox {
+    display: none;
+}
+
+.toggle {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition-duration: .3s;
+    top: 0;
+    right: 0;
+}
+
+.bars {
+    width: 100%;
+    height: 4px;
+    background-color: var(--sub-text-color);
+    border-radius: 5px;
+    transition-duration: .3s;
+}
+
+
+
+#checkbox:checked+.toggle #bar2 {
+    transform: translateY(14px) rotate(60deg);
+    margin-left: 0;
+    transform-origin: right;
+    transition-duration: .3s;
+    z-index: 2;
+}
+
+#checkbox:checked+.toggle #bar1 {
+    transform: translateY(28px) rotate(-60deg);
+    transition-duration: .3s;
+    transform-origin: left;
+    z-index: 1;
+}
+
+#checkbox:checked+.toggle {
+    transform: rotate(-90deg);
+}
+
+#checkbox:checked ~ .nav-list {
+    right: 0; /* Slide into view */
 }
 
 /* Home Section */
@@ -77,11 +119,14 @@ header {
     padding: 0 10%;
     margin-bottom: 20px;
 }
-.pictureofmine{
+
+
+.pictureofmine {
     border-radius: 50%;
     border: 2px solid var(--main-color);
 
 }
+
 .home-content h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
@@ -122,6 +167,7 @@ header {
     margin-top: 30px;
     display: flex;
     gap: 20px;
+    justify-content: center;
 }
 
 .home-sci a {
@@ -135,49 +181,51 @@ header {
 }
 
 footer {
-    background-color: var(--sub-text-color); 
-    color: var(--sub-color); 
+    background-color: var(--sub-text-color);
+    color: var(--sub-color);
     padding: 20px 10px;
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
 .footercontainer1 {
-    display: flex; 
+    display: flex;
     justify-content: flex-end;
-    align-items: center; 
-    width: 100%; 
+    align-items: center;
+    width: 100%;
 }
 
 
 footer h4 {
-    text-align: center; 
-    margin-right: 20px; 
+    text-align: center;
+    margin-right: 20px;
     font-size: 20px;
     font-weight: bold;
 }
 
 
 .map {
-    width: 300px; 
+    width: 300px;
     height: 200px;
 }
 
 
 .footercontainer2 {
-    margin-top: 20px; 
-    text-align: center; 
+    margin-top: 20px;
+    text-align: center;
 }
 
 .footerparagraph {
     font-size: 14px;
     margin: 0;
 }
-.linkfooter{
+
+.linkfooter {
     display: flex;
 }
+
 .contact-button {
     display: flex;
     justify-content: center;
@@ -199,6 +247,7 @@ footer h4 {
     background-color: var(--main-color);
     color: var(--bg-color);
 }
+
 .contact-section {
     padding: 3rem 10%;
     text-align: center;
@@ -224,7 +273,8 @@ label {
     margin-top: 1rem;
 }
 
-input, textarea {
+input,
+textarea {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -247,7 +297,8 @@ button {
 button:hover {
     background-color: var(--sub-color);
 }
-.loader{
+
+.loader {
     width: 100%;
     padding: 10px;
     background-color: var(--bg-color);
@@ -257,54 +308,84 @@ button:hover {
     display: none;
 }
 
-.loader.show{
+.loader.show {
     display: block;
 
 }
-.loader i{
+
+.loader i {
     color: var(--std-color);
-    animation: rotateme .4s linear infinite ;
-}
-.form-message{
-   display: none; 
-   width: 100%;
-   background-color: var(--bg-color);
-   border: 2px solid var(--main-color);
-   margin-top: 10px;
-   text-align: center;
-   font-weight: 600;
+    animation: rotateme .4s linear infinite;
 }
 
-.form-message.show{
+.form-message {
+    display: none;
+    width: 100%;
+    background-color: var(--bg-color);
+    border: 2px solid var(--main-color);
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.form-message.show {
     display: block;
 }
 
-.success-msg{
-    color:var(--std-color);
+.success-msg {
+    color: var(--std-color);
     line-height: 3;
 }
+
 @keyframes rotateme {
-    0%{
+    0% {
         transform: rotate(0deg);
     }
 
-    100%{
+    100% {
         transform: rotate(360deg);
     }
 }
 
 /* Responsive Design */
+
+
 @media screen and (max-width: 768px) {
-    header {
-        padding: 1rem 5%;
-    }
-
-    .navbar {
+    .hide{
         display: none;
-    }
 
-    .menu-icon {
+    }
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+    .hamburger{
         display: block;
+        cursor: pointer;
+        position: fixed;
+        top: 0%;
+        right: 5px;
+        transform: translateY(-50%);
+        z-index: 2;
+    }
+    .nav-list{
+        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background-color: var(--bg-color);
+        width: 50%;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        transform: translateX(0%);
+        transition: right 0.3s ease; 
+        z-index: 1;
+
     }
 
     .home-content h1 {
@@ -337,5 +418,96 @@ button:hover {
     .home-button a {
         font-size: 0.8rem;
     }
+}
+
+#container {
+    display: none;
+    /* Hide the content initially */
+    height: 95vh;
+}
+
+#loader {
+    display: flex;
+    /* Show the loader */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    /* Adjust as needed */
+}
+
+.crystal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+    transform-origin: bottom center;
+    transform: translate(-50%, -50%) rotateX(45deg) rotateZ(0deg);
+    animation: spin 4s linear infinite, emerge 2s ease-in-out infinite alternate,
+        fadeIn 0.3s ease-out forwards;
+    border-radius: 10px;
+    visibility: hidden;
+}
+
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotateX(45deg) rotateZ(0deg);
     }
-    
+
+    to {
+        transform: translate(-50%, -50%) rotateX(45deg) rotateZ(360deg);
+    }
+}
+
+@keyframes emerge {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        visibility: visible;
+        opacity: 0.8;
+    }
+}
+
+.crystal:nth-child(1) {
+    background: linear-gradient(45deg, #003366, #336699);
+    animation-delay: 0s;
+}
+
+.crystal:nth-child(2) {
+    background: linear-gradient(45deg, #003399, #3366cc);
+    animation-delay: 0.3s;
+}
+
+.crystal:nth-child(3) {
+    background: linear-gradient(45deg, #0066cc, #3399ff);
+    animation-delay: 0.6s;
+}
+
+.crystal:nth-child(4) {
+    background: linear-gradient(45deg, #0099ff, #66ccff);
+    animation-delay: 0.9s;
+}
+
+.crystal:nth-child(5) {
+    background: linear-gradient(45deg, #33ccff, #99ccff);
+    animation-delay: 1.2s;
+}
+
+.crystal:nth-child(6) {
+    background: linear-gradient(45deg, #66ffff, #ccffff);
+    animation-delay: 1.5s;
+}
