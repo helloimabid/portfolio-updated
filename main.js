@@ -6,7 +6,7 @@ autoyear.innerHTML = new Date().getFullYear();
 
 window.addEventListener('load', function () {
     setTimeout(() => {
-        document.querySelector('.loader').style.display = 'none';
+        document.getElementById('loader').style.display = 'none';
   document.getElementById('container').style.display = 'block';
     }, 1500); 
 });
