@@ -3,9 +3,12 @@ var autoyear = document.getElementById("current-year");
 autoyear.innerHTML = new Date().getFullYear();
 
 
-window.addEventListener('load', function() {
-  document.getElementById('loader').style.display = 'none';
+
+window.addEventListener('load', function () {
+    setTimeout(() => {
+        document.querySelector('.loader').style.display = 'none';
   document.getElementById('container').style.display = 'block';
+    }, 1500); 
 });
 
 function toggleMenu() {
